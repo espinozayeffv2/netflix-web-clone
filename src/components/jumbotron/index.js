@@ -17,18 +17,18 @@ export default function Jumbotron({ children, direction = 'row' }) {
   );
 }
 
-Jumbotron.Container = ({ children, ...rest }) => (
-  <Container {...rest}>{children}</Container>
+Jumbotron.Container = ({ children, ...resProps }) => (
+  <Container {...resProps}>{children}</Container>
 );
 
-Jumbotron.Pane = ({ children, ...rest }) => <Pane {...rest}>{children}</Pane>;
+Jumbotron.Pane = ({ children, ...resProps }) => <Pane {...resProps}>{children}</Pane>;
 
-Jumbotron.Title = ({ children, ...rest }) => (
-  <Title {...rest}>{children}</Title>
+Jumbotron.Title = ({ children, ...resProps }) => (
+  <Title {...resProps}>{children}</Title>
 );
 
-Jumbotron.SubTitle = ({ children, ...rest }) => (
-  <SubTitle {...rest}>{children}</SubTitle>
+Jumbotron.SubTitle = ({ children, ...resProps }) => (
+  <SubTitle {...resProps}>{children}</SubTitle>
 );
 
-Jumbotron.Image = ({ ...rest }) => <Image {...rest} />;
+Jumbotron.Image = ({ ...resProps }) => <Image {...resProps} />;

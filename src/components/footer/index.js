@@ -9,20 +9,28 @@ import {
   Break,
 } from './styles/Footer';
 
-export default function Footer({ children, ...rest }) {
-  return <Container {...rest}>{children}</Container>;
+export default function Footer({ children, ...resProps }) {
+  return <Container {...resProps}>{children}</Container>;
 }
 
-Footer.Row = ({ children, ...rest }) => <Row {...rest}>{children}</Row>;
+Footer.Row = ({ children, ...resProps }) => <Row {...resProps}>{children}</Row>;
 
-Footer.Column = ({ children, ...rest }) => (
-  <Column {...rest}>{children}</Column>
+Footer.Column = ({ children, ...resProps }) => (
+  <Column {...resProps}>{children}</Column>
 );
 
-Footer.Link = ({ children, ...rest }) => <Link {...rest}>{children}</Link>;
+Footer.Link = ({ children, ...resProps }) => (
+  <Link {...resProps}>{children}</Link>
+);
 
-Footer.Title = ({ children, ...rest }) => <Title {...rest}>{children}</Title>;
+Footer.Title = ({ children, ...resProps }) => (
+  <Title {...resProps}>{children}</Title>
+);
 
-Footer.Text = ({ children, ...rest }) => <Text {...rest}>{children}</Text>;
+Footer.Text = ({ children, ...resProps }) => (
+  <Text {...resProps}>{children}</Text>
+);
 
-Footer.Break = ({ children, ...rest }) => <Break {...rest}>{children}</Break>;
+Footer.Break = ({ children, ...resProps }) => (
+  <Break {...resProps}>{children}</Break>
+);
