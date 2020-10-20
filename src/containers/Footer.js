@@ -17,19 +17,17 @@ const links = {
 const generateColumnLinks = (texts) =>
   texts.map((x) => <Footer.Link href="#">{x}</Footer.Link>);
 
-export function FooterContainer() {
-  return (
-    <Footer>
-      <Footer.Title>Questions? Contact us.</Footer.Title>
-      <Footer.Break />
-      <Footer.Row>
-        <Footer.Column>{generateColumnLinks(links.first)}</Footer.Column>
-        <Footer.Column>{generateColumnLinks(links.second)}</Footer.Column>
-        <Footer.Column>{generateColumnLinks(links.third)}</Footer.Column>
-        <Footer.Column>{generateColumnLinks(links.fourth)}</Footer.Column>
-      </Footer.Row>
-      <Footer.Break />
-      <Footer.Text>Netflix Colombia</Footer.Text>
-    </Footer>
-  );
-}
+export const FooterContainer = () => (
+  <Footer>
+    <Footer.Title>Questions? Contact us.</Footer.Title>
+    <Footer.Break />
+    <Footer.Row>
+      <Footer.Column>{generateColumnLinks(links.first)}</Footer.Column>
+      <Footer.Column>{generateColumnLinks(links.second)}</Footer.Column>
+      <Footer.Column>{generateColumnLinks(links.third)}</Footer.Column>
+      <Footer.Column>{generateColumnLinks(links.fourth)}</Footer.Column>
+    </Footer.Row>
+    <Footer.Break />
+    <Footer.Text>Netflix Colombia</Footer.Text>
+  </Footer>
+);
