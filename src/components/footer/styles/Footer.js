@@ -28,7 +28,7 @@ export const Row = styled.div`
 	}
 `;
 
-export const Link styled.a`
+export const Link = styled.a`
 	color: #757575;
 	margin-bottom: 20px;
 	font-size: .9rem;
