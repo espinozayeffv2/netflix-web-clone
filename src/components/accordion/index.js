@@ -1,28 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import { Container, Inner, Title, Frame, Item, Header } from './styles/Accordion';
 
-export default function Accordion({ children, ...restProps }) {
+const ToggleContext = createContext();
+
+export default function Accordion({ children, ...props }) {
   return (
-    <Container {...restProps}>
+    <Container {...props}>
       <Inner>{children}</Inner>
     </Container>
   );
 }
 
-Accordion.Title = ({ children, ...restProps }) => (
-  <Title {...restProps}>{children}</Title>
+Accordion.Title = ({ children, ...props }) => (
+  <Title {...props}>{children}</Title>
 );
 
-Accordion.Frame = ({ children, ...restProps }) => (
-  <Frame {...restProps}>{children}</Frame>
+Accordion.Frame = ({ children, ...props }) => (
+  <Frame {...props}>{children}</Frame>
 );
 
-Accordion.Item = function AccordionItem({ children, ...restProps }) {
+Accordion.Item = function AccordionItem({ children, ...props }) {
   const [toggleItem, setToggleItem] = useState(false);
 
-  return <Item {...restProps}>{children}</Item>;
+  return (
+    <ToggleContext.Provider value={{ toggleItem, setToggleItem }}>
+      <Item {...props}>{children}</Item>
+    </ToggleContext.Provider>;
+  );
 };
 
-Accordion.Header = ({ children, ...restProps }) => (
-  <Header {...restProps}>{children}</Header>
-);
+Accordion.Header = ({ children, ...props }) => {
+  const { toggleItem, setToggleItem } = useContext(ToggleContext);
+
+  return (
+    <Header onClick={() => setToggleItem((toggleItem) => !toggleItem)} {...props}>
+      {children}
+    </Header>
+  );
+};
+
+Accordion.Body = ({ children, ...props}) => {
+  const { toggleItem } = useContext(ToggleContext);
+
+  return toggleItem ? <Body {....props}>{children}</Body> : null;
+}
