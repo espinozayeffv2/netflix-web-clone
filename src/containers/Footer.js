@@ -15,23 +15,19 @@ const links = [
 ];
 
 const generateColumnLinks = (columns) =>
-  columns.map(column => (
+  columns.map((column) => (
     <Footer.Column>
-      {column.map(link => (
+      {column.map((link) => (
         <Footer.Link href="#">{link}</Footer.Link>
-        ))
-      }
+      ))}
     </Footer.Column>
-  )
-);
+  ));
 
 export const FooterContainer = () => (
   <Footer>
     <Footer.Title>Questions? Contact us.</Footer.Title>
     <Footer.Break />
-    <Footer.Row>
-      {generateColumnLinks(links)}
-    </Footer.Row>
+    <Footer.Row>{generateColumnLinks(links)}</Footer.Row>
     <Footer.Break />
     <Footer.Text>Netflix Colombia</Footer.Text>
   </Footer>
