@@ -19,18 +19,10 @@ Footer.Column = ({ children, ...props }) => (
   <Column {...props}>{children}</Column>
 );
 
-Footer.Link = ({ children, ...props }) => (
-  <Link {...props}>{children}</Link>
-);
+Footer.Link = ({ children, ...props }) => <Link {...props}>{children}</Link>;
 
-Footer.Title = ({ children, ...props }) => (
-  <Title {...props}>{children}</Title>
-);
+Footer.Title = ({ children, ...props }) => <Title {...props}>{children}</Title>;
 
-Footer.Text = ({ children, ...props }) => (
-  <Text {...props}>{children}</Text>
-);
+Footer.Text = ({ children, ...props }) => <Text {...props}>{children}</Text>;
 
-Footer.Break = ({ children, ...props }) => (
-  <Break {...props}>{children}</Break>
-);
+Footer.Break = ({ children, ...props }) => <Break {...props}>{children}</Break>;
