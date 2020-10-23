@@ -37,7 +37,7 @@ Accordion.Item = function AccordionItem({ children, ...props }) {
   );
 };
 
-Accordion.Header = function AccordionHeader({ children, ...props }){
+Accordion.Header = function AccordionHeader({ children, ...props }) {
   const { toggleItem, setToggleItem } = useContext(ToggleContext);
 
   return (
@@ -47,11 +47,16 @@ Accordion.Header = function AccordionHeader({ children, ...props }){
       {...props}
     >
       {children}
+      {toggleItem ? (
+        <img src="/images/icons/close-slim.png" alt="Close" />
+      ) : (
+        <img src="/images/icons/add.png" alt="Open" />
+      )}
     </Header>
   );
 };
 
-Accordion.Body = function AccordionBody ({ children, ...props }) {
+Accordion.Body = function AccordionBody({ children, ...props }) {
   const { toggleItem } = useContext(ToggleContext);
 
   return toggleItem ? <Body {...props}>{children}</Body> : null;

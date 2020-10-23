@@ -17,8 +17,10 @@ const links = [
 const generateColumnLinks = (columns) =>
   columns.map((column) => (
     <Footer.Column>
-      {column.map((link) => (
-        <Footer.Link href="#">{link}</Footer.Link>
+      {column.map((link, index) => (
+        <Footer.Link key={index} href="#">
+          {link}
+        </Footer.Link>
       ))}
     </Footer.Column>
   ));

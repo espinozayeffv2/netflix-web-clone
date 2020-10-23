@@ -1,6 +1,5 @@
 import React from 'react';
 import { Accordion } from '../components';
-import { Item } from '../components/accordion/styles/Accordion';
 import faqsData from '../fixtures/faqs.json';
 
 export const FaqsContainer = () => (
