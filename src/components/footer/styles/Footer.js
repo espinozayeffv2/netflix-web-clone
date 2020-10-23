@@ -29,7 +29,7 @@ export const Row = styled.div`
 export const Link = styled.a`
   color: #757575;
   margin-bottom: 20px;
-  font-size: 13px;
+  font-size: .9rem;
   text-decoration: none;
 
   &:hover {
@@ -38,13 +38,13 @@ export const Link = styled.a`
 `;
 
 export const Title = styled.p`
-  font-size: 16px;
+  font-size: 1rem;
   color: #757575;
   margin-bottom: 40px;
 `;
 
 export const Text = styled.p`
-  font-size: 13px;
+  font-size: .8rem;
   color: #757575;
   margin-bottom: 40px;
 `;

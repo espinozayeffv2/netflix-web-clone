@@ -1,31 +1,36 @@
 import React from 'react';
 import { Footer } from '../components';
 
-const links = {
-  first: [
+const links = [
+  [
     'FAQ',
     'Investor Relations',
     'Ways to watch',
     'Corporate Informacion',
     'Netflix Originals',
   ],
-  second: ['Help Center', 'Jobs', 'Terms of Use', 'Contact Us'],
-  third: ['Account', 'Redeem Gift', 'Privacy', 'Speed Test'],
-  fourth: ['Media Center', 'Buy Gift', 'Cookie Preferences', 'Legal Notices'],
-};
+  ['Help Center', 'Jobs', 'Terms of Use', 'Contact Us'],
+  ['Account', 'Redeem Gift', 'Privacy', 'Speed Test'],
+  ['Media Center', 'Buy Gift', 'Cookie Preferences', 'Legal Notices'],
+];
 
-const generateColumnLinks = (texts) =>
-  texts.map((x) => <Footer.Link href="#">{x}</Footer.Link>);
+const generateColumnLinks = (columns) =>
+  columns.map(column => (
+    <Footer.Column>
+      {column.map(link => (
+        <Footer.Link href="#">{link}</Footer.Link>
+        ))
+      }
+    </Footer.Column>
+  )
+);
 
 export const FooterContainer = () => (
   <Footer>
     <Footer.Title>Questions? Contact us.</Footer.Title>
     <Footer.Break />
     <Footer.Row>
-      <Footer.Column>{generateColumnLinks(links.first)}</Footer.Column>
-      <Footer.Column>{generateColumnLinks(links.second)}</Footer.Column>
-      <Footer.Column>{generateColumnLinks(links.third)}</Footer.Column>
-      <Footer.Column>{generateColumnLinks(links.fourth)}</Footer.Column>
+      {generateColumnLinks(links)}
     </Footer.Row>
     <Footer.Break />
     <Footer.Text>Netflix Colombia</Footer.Text>
